@@ -40,3 +40,4 @@ html/
 dhparam/
 acme/
 
+orca-ec2-key.pem
