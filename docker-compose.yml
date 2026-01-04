@@ -17,7 +17,7 @@ services:
       - proxy
     restart: unless-stopped
     labels:
-      - "com.github.nginx-proxy.nginx-proxy"
+      - "com.github.nginx-proxy.nginx"
 
   letsencrypt:
     image: nginxproxy/acme-companion:latest
@@ -34,6 +34,7 @@ services:
       - nginx-proxy
     environment:
       - DEFAULT_EMAIL=${LETSENCRYPT_EMAIL:-admin@example.com}
+      - NGINX_PROXY_CONTAINER=nginx-proxy
     restart: unless-stopped
 
   back-example:
